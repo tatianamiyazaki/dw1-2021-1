@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatação de textos</title>
+    <style>
+        u{
+            background: tomato;
+        }
+        address{
+            background: yellow;
+            /* fazendo elemento ficar em linha*/
+            display: inline;
+            font-style: normal;/* tira o itálico*/
+            text-decoration: underline;/* sublinhado*/
+        }
+        p{
+            display: inline; /* esta configuração está atrabalhando os parágrafos, por isso coloqueis os <br>*/
+        }
+        strong{
+            color: red;
+        }
+        mark{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formatação de textos</h1>
+    <!-- tag <u> (underline) sublinha o texto, mas é considerada obsoleta (não usar)-->
+    <p>
+        Orkutilson morava na <u>Rua do Sobe e Desce, 333</u>, 
+        e seu e-mail era <u>orkutilson@gmail.com</u>.<br><br>
+    </p>
+
+    <!-- 
+        tag <address> dá destaque ao endereço e usa semântica para ser entendida por máquina
+        a tag <address> também quebra linhas e pode ser consertado com CSS
+    -->    
+    <p>
+        Orkutilson morava na <address> Rua do Sobe e Desce, 333</address>, 
+        e seu e-mail era <address>orkutilson@gmail.com</address>. <br><br>
+    </p>
+    <!-- tag <b> faz negrito e <i> faz itálico, são tags apenas visuais (também são obsoletas)-->
+    <p>
+        Ele estudava em uma <b> escola estadual</b> e sua matéria preferida
+        era <i> Matemática</i>.<br><br>
+    </p>
+    <!--
+        <strong> - negrito (texto mais importante) é tag semântica
+        <em> - itálico (emphasis - ênfase) é tag semântica 
+    -->
+    <p>
+        Ele estudava em uma <strong> escola estadual</strong> e sua matéria preferida
+        era <em> Matemática</em>.<br><br>
+    </p>
+    <p>
+        Ele também gostava de usar <mark> caneta marca texto</mark> para destacar
+        os os trechos mais importantes do seu caderno. <br><br>    
+    </p>
+    <!-- <strike> - traço através do texto, tachado. Também é obsoleto-->
+    <p>
+        Sua professora achava que ele era <strike> meio burro</strike> não muito
+        inteligente, já que sempre tinha dificuldade nas provas. <br><br>
+    </p>
+    <!-- <del> - mesmo efeito visual do strike, mas é semântico-->
+    <p>
+        Sua professora achava que ele era <del> meio burro</del> não muito
+        inteligente, já que sempre tinha dificuldade nas provas. <br><br>
+    </p>
+    <!--<ins> - texto inserido (texto acrescentado depois da primeira publicação), é semântico-->
+    <p>
+        Depois que fez recuperação, sua nota foi de 6,7, <ins> o suficiente
+        para sua aprovação</ins>.<br><br>
+    </p>
+    <!-- <sub> - texto subscrito. <sup> - textos sobrescrito (superscript)-->
+    <p>
+        Orkutilson também gostava de fórumlas. Suas preferidas eram 
+        H<sub>2</sub>O e E=mc<sup>2</sup>.<br><br>
+    </p>
+
+</body>
+</html>
