@@ -11,8 +11,10 @@
     -->
     <picture>
         <!-- É bom sempre colocar max-width um pouco maior que a imagem para compensar as margens do documento-->
+        <!-- Os parênteses em torno do valor de media fazem parte da sintaxe que determina o ponto de quebra (breakpoint da regra)-->
         <source media="(max-width: 630px)" srcset="img/distance-education-300px.jpg" type="image/jpeg">
         <source media="(max-width: 1030px)" srcset="img/distance-education-600px.jpg" type="image/jpeg">
+        <!-- Imagem tamanho padrão (maior)-->
         <img src="img/distance-education-1000px.jpg" alt="Imagem grande">
     </picture>
 </body>

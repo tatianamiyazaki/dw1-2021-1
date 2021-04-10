@@ -68,3 +68,8 @@ div{
     font-size: 3rem; /* 3 * 20px do tamanho de fonte do elemento raiz = 60px*/
     width: 40vw; /* 40% da largura da janela (e não do pai) */
 }
+
+/* Regras de classe começam com um ponto*/
+.borda-dif{
+    border: 2px dashed red;
+}
