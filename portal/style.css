@@ -1,6 +1,15 @@
 /* @import, quando existem, devem ser o primeiro item de um arquivo CSS*/
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+/*Definição de variáveis*/
+:root{
+    --cor-primaria: #550000;
+    --cor-secundaria: #FF7F2A;
+    --cor-fundo-clara: #DDDDDD;
+    --cor-fundo-escura: #BBBBBB;
+    --cor-texto-claro: #FFFFFF;
+    --cor-texto-escura: #777777;
+}
 
 /*CSS reset*/
 *{ /*Todos os Elementos*/
@@ -17,10 +26,26 @@
     
     /*Família de fontes da web (webfonts)*/
     font-family: Raleway, Calibri, Arial, sans;
+    font-size: 16px;
+}
+
+html{ 
+    font-size: 16px; /*tamanho de fonte padrão do documento*/
+}
+
+/*Configuração de todos os links do site*/
+a{
+    color: var(--cor-primaria);
+    text-decoration: none; /*sem sublinhado*/
+}
+
+a:hover{ /*mouse passando em cima do link*/
+    color: var(--cor-secundaria);
+    text-decoration: underline; /*volta o sublinhado*/
 }
 
 header{
-    background-color: #550000;
+    background-color: var(--cor-primaria);
     padding: 10px 20px;
 }
 
@@ -30,6 +55,52 @@ nav ul li{
 }
 
 nav{
-    background-color: #FF7F2A; /* Cor do fundo */
-    color: #ffffff; /* Cor do texto */
+    background-color: var(--cor-secundaria); /* Cor do fundo */
+    color: var(--cor-texto-claro); /* Cor do texto */
+}
+
+#content{
+    background-color: var(--cor-fundo-escura);
+    padding: 20px;
+    display: flex;
+    flex-direction: row; /*Os filhos ficarão em linha*/
+    
+}
+
+section{
+    background-color: var(--cor-texto-claro);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;/*Bordas arredondadas*/
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);/*sombra (drop-down shadow) horizontal, vertical, esfumaçamento . RGBA(último número é transparência - canal alfa)*/
+    flex-grow: 1; /*1 unidade de largura (padrão)*/
+}
+
+#principal{
+    flex-grow: 3; /*3 unidades de largura*/
+}
+#secundario{
+    margin-left: 20px;
+    background-color: var(--cor-fundo-clara);
+} 
+section article{/* article que estão dentro uma section*/
+    margin: 24px 0; /*24px top/bottom, 0 left-right*/
+}
+
+section > h1{ /*apenas os h1 que são filhos diretos de section*/
+    text-transform: uppercase; /*deixa o texto em maiúsculas*/
+    color: var(--cor-secundaria);
+}
+
+article > h1{ /* só os h1 que são filhos diretos de article*/
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+
+article > h1 > a{
+    font-size: 1.5rem;
+}
+
+article > p{
+    color: var(--cor-texto-escura);
 }
