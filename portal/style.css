@@ -111,6 +111,43 @@ nav {
     text-decoration: none;
 }
 
+#menu-contraido {
+    display: inline-block;
+    position: relative;
+}
+
+#menu-contraido input, #menu-contraido span {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#menu-contraido input {
+    z-index: 100; /* Traz o input para cima */ 
+    opacity: 0; /* Esconde o input */  
+    display: none;/*Só vão aparecer de 800px para baixo*/
+}
+
+#menu-contraido span {
+    display: block;
+    background-color: var(--cor-primaria);
+    border-radius: 4px;
+    border: 2px solid #FFFFFF;
+    background-image: url('img/menu-icon-48x48.png');
+    background-size: 40px 40px;
+    background-position: center center;
+    cursor: pointer; /* Cursor de mãozinha */
+    display: none;/*Só vão aparecer de 800px para baixo*/
+}
+
+/* Seletor ~: seleciona o próximo elemento (irmão) */
+#menu-contraido input:checked ~ span {
+    /* Troca a imagem */
+    background-image: url('img/close-icon-48x48.png');
+}
+
 #content {
     background-color: var(--cor-fundo-clara);
     padding: 20px;
@@ -268,9 +305,40 @@ footer img {
 }
 
 @media screen and (max-width: 800px) {
-    /*
-        A FAZER: Colocar o menu em um botão
-    */
+    #menu{
+        min-height: 88px;
+    }
+
+    #menu ul{
+        margin-top: 50px;
+        margin-left: -18px;
+    }
+    #menu-contraido{
+        margin-top: 24px;
+    }
+    #menu ul li { /* Menu vertical*/
+        display: block;
+        margin: 0;
+        padding: 12px 0; 
+    }
+
+    #menu a{
+        width: 100%;
+    }
+
+    #menu-contraido ul{
+        display: none;
+        width: 100%;
+    }
+
+    #menu-contraido input, #menu-contraido span{
+        display: block; /*Mostra o botão do menu*/
+    }
+
+    #menu-contraido input:checked ~ ul{
+        display: block;
+    }
+
     #content {
         flex-direction: column; /* Os filhos ficarão em coluna, na vertical */
     }
